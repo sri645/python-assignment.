@@ -1,0 +1,28 @@
+# python-assignment.
+python assignment
+
+#4a
+n = int(input("enter number of rows"))
+
+for i in range(0,n):
+    for j in range(0,i+1):
+        print('*',end = '')
+    print()
+ #4b
+
+from numpy import array
+
+arr = array([1, 2, 3, 4, 5])
+print(arr)
+count = 0
+key = 0
+for i in range(0,len(arr)-1):
+    if(arr[i] > arr[i + 1]):
+        count += 1
+    elif(arr[i] < arr[i + 1]):
+        key += 1
+if(count == len(arr)-1 or key == len(arr)-1):
+    print('monotonic array')
+
+else:
+    print('not a monotonic array')
