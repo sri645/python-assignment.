@@ -1,0 +1,54 @@
+#3a
+def remove_duplicates(str1):
+    str2 = ''
+    for i in str1:
+        if i not in str2:
+            str2 = str2 + i
+    return(str2)
+print(remove_duplicates('python programming'))
+
+#3b
+def mult_lists(a, b, n):
+    lst = []
+    for i in range(0,n):
+        lst.append(a[i]*b[i])
+    return sum(lst)
+while(True):
+    n = int(input('enter number of elements in lst1'))
+    m = int(input('enter number of elements in lst2'))
+    if(n != m):
+        print('list1 and list2 should have same elements')
+    else:
+        break
+
+lst1 = []
+lst2 = []
+
+print('enter elements in list1')
+for i in range(0,n):
+    z = int(input())
+    lst1.append(z)
+print('enter elements in list2')
+for i in range(0,n):
+    k = int(input())
+    lst2.append(k)
+
+print('the sum of corresponding elements is',mult_lists(lst1, lst2,n))
+
+#3c
+def flatten_list(list_of_lists, flat_list=[]):
+    if  list_of_lists == []:
+        return flat_list
+    else:
+        for item in list_of_lists:
+            if type(item) == list:
+                flatten_list(item)
+            else:
+                flat_list.append(item)
+        
+        return flat_list
+
+list_of_lists = [1, [2, 3], [4, [5, 6]], [7, 8], 9]
+flat_list = flatten_list(list_of_lists)
+
+print(flat_list)
